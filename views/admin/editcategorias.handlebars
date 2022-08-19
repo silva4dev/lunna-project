@@ -1,0 +1,29 @@
+{{#each erros}}
+    <div class="notification is-danger is-light">
+        {{ texto }}
+    </div>
+{{else}}
+
+{{/each}}
+
+<div class="card">
+    <div class="card-header has-background-light">
+        <h1 class="card-header-title is-size-4">Editar categoria</h1>
+    </div>
+    <div class="card-content">
+        <form action="/admin/categorias/edit" method="post">
+        <input type="hidden" name="id" value="{{ _id }}">
+            <div class="field">
+                <label for="nome">Nome: </label>
+                <input class="input mb-2" type="text" id="nome" name="nome" placeholder="Nome da categorias" 
+                autocomplete="off" value="{{ nome }}">
+            </div>
+            <div class="control">
+                <label for="slug">Slug: </label>
+                <input class="input mb-5" type="text" id="slug" name="slug" placeholder="Slug da categorias" 
+                autocomplete="off" value="{{ slug }}">
+            </div>
+            <button type="submit" class="button is-info">Editar categoria</button>
+        </form>
+    </div>
+</div>

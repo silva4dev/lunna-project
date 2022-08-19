@@ -1,0 +1,35 @@
+{{#each erros}}
+    <div class="notification is-danger is-light">
+        {{ texto }}
+    </div>
+{{else}}
+
+{{/each}}
+
+<h1 class="title">Crie sua conta :</h1>
+<hr />
+<div class="box">
+    <form action="" method="post">
+        <div class="control mb-4">
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" class="input" autocomplete="off" 
+            value="{{ nome }}">
+        </div>
+        <div class="control mb-4">
+            <label for="email">Email: </label>
+            <input type="email" name="email" class="input" autocomplete="off" 
+            value="{{ email }}">
+        </div>
+        <div class="control mb-4">
+            <label for="senha">Senha: </label>
+            <input type="password" name="senha" class="input" autocomplete="off" 
+            value="{{ senha }}">
+        </div>
+        <div class="control mb-5">
+            <label for="confirmar_senha">Confirmar senha:</label>
+            <input type="password" name="confirmar_senha" class="input" autocomplete="off" 
+            value="{{ confirmar_senha }}">
+        </div>
+        <button type="submit" class="button is-info is-fullwidth">Criar conta</button>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="box has-text-centered has-background-grey-lighter p-6">
+    <h1 class="is-size-1">Bem vindo ao Blog da TechJedi</h1>
+    <h2 class="is-size-5">Temos o objetivo de antenar você sobre o mundo tecnológico</h2>
+    <hr class="has-background-grey-light" />
+    <p class="is-size-5 is-italic">"Aqui você vai poder ler sobre as novidades do mundo da tecnologia".</p>
+    <p class="mt-5">
+        <a href="/usuarios/login"><button class="button is-info button is-medium">Ver mais</button></a>
+    </p>
+</div>
+
+<hr />
+
+<h2 class="title">Postagens recentes:</h2>
+
+{{#each postagens}}
+<div class="card mb-5">
+    <div class="card-header has-background-grey">
+        <p class="card-header-title is-size-5 has-text-white">{{ titulo }}</p>
+    </div>
+    <div class="card-content">
+        <p class="is-size-5">{{ descricao }}</p>   
+        <a href="/postagem/{{ slug }}"><button class="button is-info mt-4">Leia mais</button></a>
+        <hr />
+        <small>Categoria: {{ categoria.nome }}</small><br />
+        <small>Data da publicação: {{ data }}</small>
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}
+

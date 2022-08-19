@@ -1,0 +1,56 @@
+{{#each erros}}
+    <div class="notification is-danger is-light">
+        {{ texto }}
+    </div>
+{{else}}
+
+{{/each}}
+
+<div class="card">
+    <div class="card-header has-background-light">
+        <p class="card-header-title is-size-4">Editar postagem</p>
+    </div>
+    <div class="card-content">
+        <form action="/admin/postagem/edit" method="post">
+            <input type="hidden" name="id" value="{{ postagem._id }}">
+            <div class="control mb-2">
+                <label for="titulo">Título:</label>
+                <input class="input" type="text" name="titulo" autocomplete="off" 
+                value="{{ postagem.titulo }}">
+            </div>
+            <div class="control mb-2">
+                <label for="slug">Slug:</label>
+                <input class="input" type="text" name="slug" autocomplete="off" 
+                value="{{ postagem.slug }}">
+            </div>
+            <div class="control mb-2">
+                <label for="descricao">Descrição:</label>
+                <input class="input" type="text" name="descricao" autocomplete="off" 
+                value="{{ postagem.descricao }}">
+            </div>
+            <div class="control mb-3">
+                <label for="conteudo">Conteúdo:</label>
+                <textarea class="textarea" type="text" name="conteudo"
+                 autocomplete="off">{{ postagem.conteudo }}</textarea>
+            </div>
+            <div class="control mb-5">
+                <label for="categoria">Categoria:</label><br />
+                <div class="select is-fullwidth mt-2">
+                    <select name="categoria">
+                        {{#each categorias}}
+                        <option value="{{ _id }}">{{ nome }}</option>
+                        {{else}}
+                        <option value="0">Nenhuma categoria registrada</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="button is-info">Editar postagem</button>
+        </form>
+    </div>
+</div>
+
+<script>
+   const option = document.getElementById('option');
+   console.log({{ postagem }})
+</script>

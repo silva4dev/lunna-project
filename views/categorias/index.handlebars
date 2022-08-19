@@ -1,0 +1,17 @@
+<div class="box">
+<h1 class="has-text-centered title">Categorias</h1>
+<hr />
+{{#each categorias}}
+<div class="content">
+    <ul>
+        <li class="is-size-6">
+            <a href="/categorias/{{ slug }}">{{ nome }}</a>
+        </li>
+    </ul>
+</div>
+{{else}}
+
+{{/each}}
+</div>
+
+
